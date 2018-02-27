@@ -115,11 +115,13 @@
     <ClCompile Include="Palindrome.cpp" />
     <ClCompile Include="PalindromePairs.cpp" />
     <ClCompile Include="PatternMatching.cpp" />
+    <ClCompile Include="Tries.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Palindrome.h" />
     <ClInclude Include="PalindromePairs.h" />
     <ClInclude Include="PatternMatching.h" />
+    <ClInclude Include="Tries.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

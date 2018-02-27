@@ -27,6 +27,9 @@
     <ClCompile Include="PatternMatching.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Tries.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Palindrome.h">
@@ -36,6 +39,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PatternMatching.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tries.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

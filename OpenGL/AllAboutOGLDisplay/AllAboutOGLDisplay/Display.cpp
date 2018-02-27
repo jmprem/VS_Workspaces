@@ -15,8 +15,8 @@ Display::Display(int width, int height, const std::string& title)
 	SDL_GL_SetAttribute(SDL_GL_GREEN_SIZE, 8);
 	SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE, 8);
 	SDL_GL_SetAttribute(SDL_GL_ALPHA_SIZE, 8);
-	//Set the total data in bits that SDL will allocate per pixel. This 8*4 = 32 for RGBA
-	//This says, SDL will ATLEAST this many bits.
+	//Set the total data in bits that SDL will allocate per pixel. This is 8*4 = 32 for RGBA
+	//This says, SDL will ATLEAST allocate this many bits and it may or may not be exactly that many bits.
 	SDL_GL_SetAttribute(SDL_GL_BUFFER_SIZE, 32);
 	//Allocate space for 2 windows. (But we actually create only 1. The second one will not be displayed. More info later.)
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
@@ -40,6 +40,7 @@ Display::Display(int width, int height, const std::string& title)
 
 Display::~Display()
 {
+	//Do things in reverse order to what was done in the constructor
 	SDL_GL_DeleteContext(m_glContext);
 	SDL_DestroyWindow(m_window);
 	SDL_Quit();
@@ -57,6 +58,12 @@ void Display::Update()
 		if (e.type == SDL_QUIT)
 			m_isClosed = true;
 	}
+}
+
+void Display::Clear(float r, float g, float b, float a)
+{
+	glClearColor(r, g, b, a);
+	glClear(GL_COLOR_BUFFER_BIT);
 }
 
 bool Display::IsClosed()

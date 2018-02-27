@@ -11,6 +11,7 @@ public:
 	virtual ~Display();
 
 	void Update();
+	void Clear(float r, float g, float b, float a);
 	bool IsClosed();
 
 private:
